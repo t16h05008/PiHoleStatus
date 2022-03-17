@@ -1,0 +1,28 @@
+:root {
+    --width: 320px;
+    --height: var(--width) / 8; /* 40px */
+}
+  
+
+#PersonalToolbar {
+    height:var(--height) !important;
+}
+
+#piholestatus_t16h05008_com-browser-action {
+    height: var(--height) !important;
+    width: var(--width) !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+#PersonalToolbar toolbarbutton stack {
+    height: var(--height) !important;
+    width: var(--width) !important;
+}
+
+#PersonalToolbar toolbarbutton .toolbarbutton-icon {
+    height: var(--height) !important;
+    width: var(--width) !important;
+    
+}
+
