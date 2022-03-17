@@ -1,0 +1,18 @@
+{
+
+  "manifest_version": 2,
+  "name": "PiHoleStatus",
+  "version": "1.0",
+  "description": "Shows some information like blocked queries, total queries and so on directly in the toolbar.",
+  "browser_action": {
+    "default_title": "PiHoleStatus",
+    "default_area": "personaltoolbar"
+  },
+  "permissions": [
+    "*://pi.hole/admin/*"
+  ],
+
+  "background": {
+      "scripts": ["updatePiHoleStatusIcon.js"]
+  }
+}
