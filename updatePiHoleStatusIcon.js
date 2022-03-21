@@ -10,9 +10,9 @@ setInterval( function() {
         mode: 'cors'})
     .then(response => response.json())
     .then(data => {
-        // property names are a bit misleading, it's the total number, not today's number
-        let totalQueries = format(data.dns_queries_today);
-        let adsBlocked = format(data.ads_blocked_today);
+
+        let dailyQueries = format(data.dns_queries_today);
+        let adsBlockedToday = format(data.ads_blocked_today);
         let blockedPercentage = Math.round(data.ads_percentage_today * 100 ) / 100; // 2 decimal places
         let adlistDomains = format(data.domains_being_blocked);
         // create the gui as a canvas
@@ -38,8 +38,8 @@ setInterval( function() {
         ctx.fillText("Blocked %", elementWidth * 0.5 + elementWidth / 8, elementHeight * 0.25)
         ctx.fillText("Adlist Domains", elementWidth * 0.75 + elementWidth / 8, elementHeight * 0.25)
         ctx.font = "bold 14px Helvetica";
-        ctx.fillText(totalQueries, elementWidth / 8, elementHeight * 0.75)
-        ctx.fillText(adsBlocked, elementWidth * 0.25 + elementWidth / 8, elementHeight * 0.75)
+        ctx.fillText(dailyQueries, elementWidth / 8, elementHeight * 0.75)
+        ctx.fillText(adsBlockedToday, elementWidth * 0.25 + elementWidth / 8, elementHeight * 0.75)
         ctx.fillText(blockedPercentage + "%", elementWidth * 0.5 + elementWidth / 8, elementHeight * 0.75)
         ctx.fillText(adlistDomains, elementWidth * 0.75 + elementWidth / 8, elementHeight * 0.75)
         // set canvas content as the extension icon
